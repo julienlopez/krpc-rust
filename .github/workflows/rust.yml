@@ -18,6 +18,8 @@ jobs:
     - uses: actions/checkout@v3
     - name: Protobuf compiler
       run: sudo apt install -y protobuf-compiler
+    - name: Submodules init
+      run: git submodule update --init.
     - name: Check
       run: cargo clippy --verbose
     - name: Run tests
